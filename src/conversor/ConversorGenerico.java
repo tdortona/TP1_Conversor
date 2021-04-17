@@ -59,6 +59,7 @@ public class ConversorGenerico extends javax.swing.JFrame {
         jComboBoxConvertir = new javax.swing.JComboBox<>();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
+        jButtonLimpiar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -103,6 +104,13 @@ public class ConversorGenerico extends javax.swing.JFrame {
             }
         });
 
+        jButtonLimpiar.setText("Limpiar");
+        jButtonLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonLimpiarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -121,7 +129,9 @@ public class ConversorGenerico extends javax.swing.JFrame {
                             .addComponent(jComboBoxConvertir, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonConvertir)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButtonConvertir)
+                            .addComponent(jButtonLimpiar))
                         .addGap(49, 49, 49))))
         );
         layout.setVerticalGroup(
@@ -136,9 +146,12 @@ public class ConversorGenerico extends javax.swing.JFrame {
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonConvertir))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtonLimpiar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -181,6 +194,12 @@ public class ConversorGenerico extends javax.swing.JFrame {
             realizarConversion(false);
         }
     }//GEN-LAST:event_jTextField2KeyPressed
+
+    private void jButtonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimpiarActionPerformed
+        // TODO add your handling code here:
+        jTextField1.setText("");
+        jTextField2.setText("");
+    }//GEN-LAST:event_jButtonLimpiarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -251,6 +270,7 @@ public class ConversorGenerico extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonConvertir;
+    private javax.swing.JButton jButtonLimpiar;
     private javax.swing.JComboBox<String> jComboBoxConvertir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
