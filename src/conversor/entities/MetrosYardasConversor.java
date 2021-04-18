@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package conversor;
+package conversor.entities;
 
-/**
- *
- * @author tdortona
- */
+import conversor.base.Conversor;
+
 public class MetrosYardasConversor extends Conversor {
     
     public static final Double UNA_YARDA = 0.91;

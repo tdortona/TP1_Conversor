@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package conversor;
+package conversor.entities;
 
-/**
- *
- * @author tdortona
- */
+import conversor.base.Conversor;
+
 public class GalonesLitrosConversor extends Conversor {
     
     private static final double UN_GALON = 3.79;
