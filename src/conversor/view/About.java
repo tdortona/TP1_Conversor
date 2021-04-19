@@ -25,7 +25,7 @@ public class About extends javax.swing.JFrame {
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("TP 1: Conversor Generico\nIntegrantes Grupo 9:\n\nLopez Llancaman Juan Marcelo (jlopezllancaman@alumno.unlam.edu.ar)\nNievas Lautaro Ismael (lnieva@alumno.unlam.edu.ar)\nSumi Daniel (dsumi@alumno.unlam.edu.ar)\nDortona Tomas Andres (tdortona@alumno.unlam.edu.ar)\nFerraresi Mauro Sebastian (mferraresi@alumno.unlam.edu.ar)\n");
+        jTextArea1.setText("TP 1: Conversor Generico\nIntegrantes Grupo 10:\n\nLopez Llancaman Juan Marcelo (jlopezllancaman@alumno.unlam.edu.ar)\nNievas Lautaro Ismael (lnieva@alumno.unlam.edu.ar)\nSumi Daniel (dsumi@alumno.unlam.edu.ar)\nDortona Tomas Andres (tdortona@alumno.unlam.edu.ar)\nFerraresi Mauro Sebastian (mferraresi@alumno.unlam.edu.ar)\n");
         jScrollPane1.setViewportView(jTextArea1);
 
         btnCerrar.setText("Cerrar");

@@ -64,7 +64,7 @@
             <Property name="editable" type="boolean" value="false"/>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="TP 1: Conversor Generico&#xa;Integrantes Grupo 9:&#xa;&#xa;Lopez Llancaman Juan Marcelo (jlopezllancaman@alumno.unlam.edu.ar)&#xa;Nievas Lautaro Ismael (lnieva@alumno.unlam.edu.ar)&#xa;Sumi Daniel (dsumi@alumno.unlam.edu.ar)&#xa;Dortona Tomas Andres (tdortona@alumno.unlam.edu.ar)&#xa;Ferraresi Mauro Sebastian (mferraresi@alumno.unlam.edu.ar)&#xa;"/>
+            <Property name="text" type="java.lang.String" value="TP 1: Conversor Generico&#xa;Integrantes Grupo 10:&#xa;&#xa;Lopez Llancaman Juan Marcelo (jlopezllancaman@alumno.unlam.edu.ar)&#xa;Nievas Lautaro Ismael (lnieva@alumno.unlam.edu.ar)&#xa;Sumi Daniel (dsumi@alumno.unlam.edu.ar)&#xa;Dortona Tomas Andres (tdortona@alumno.unlam.edu.ar)&#xa;Ferraresi Mauro Sebastian (mferraresi@alumno.unlam.edu.ar)&#xa;"/>
           </Properties>
         </Component>
       </SubComponents>

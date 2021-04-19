@@ -39,8 +39,9 @@ public class ConversorGenerico extends javax.swing.JFrame {
         initComponents();
         setTitle("Conversor genérico");
         setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setResizable(false);
-        
+
         conversores.add(new CentimetrosPulgadasConversor());
         conversores.add(new GalonesLitrosConversor());
         conversores.add(new KilogramosLibrasConversor());
@@ -70,11 +71,12 @@ public class ConversorGenerico extends javax.swing.JFrame {
         txtConvert1 = new javax.swing.JTextField();
         txtConvert2 = new javax.swing.JTextField();
         jButtonLimpiar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        mnuArchivo = new javax.swing.JMenu();
+        mnuItemSalir = new javax.swing.JMenuItem();
+        mnuAyuda = new javax.swing.JMenu();
+        mnuItemAcerca = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -126,29 +128,31 @@ public class ConversorGenerico extends javax.swing.JFrame {
             }
         });
 
-        jMenu1.setText("Archivo");
+        jLabel1.setText("Conversion:");
 
-        jMenuItem1.setText("Salir");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        mnuArchivo.setText("Archivo");
+
+        mnuItemSalir.setText("Salir");
+        mnuItemSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                mnuItemSalirActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        mnuArchivo.add(mnuItemSalir);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(mnuArchivo);
 
-        jMenu2.setText("Ayuda");
+        mnuAyuda.setText("Ayuda");
 
-        jMenuItem2.setText("Acerca de...");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        mnuItemAcerca.setText("Acerca de...");
+        mnuItemAcerca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                mnuItemAcercaActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem2);
+        mnuAyuda.add(mnuItemAcerca);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(mnuAyuda);
 
         setJMenuBar(jMenuBar1);
 
@@ -158,42 +162,43 @@ public class ConversorGenerico extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblConvert1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtConvert1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
-                        .addComponent(lblConvert2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtConvert2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27))
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jButtonLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonConvertir, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(121, 121, 121)
-                .addComponent(jComboBoxConvertir, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 262, Short.MAX_VALUE)
+                        .addComponent(jButtonConvertir, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblConvert2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblConvert1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jComboBoxConvertir, 0, 348, Short.MAX_VALUE)
+                            .addComponent(txtConvert1)
+                            .addComponent(txtConvert2))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(13, 13, 13)
-                .addComponent(jComboBoxConvertir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBoxConvertir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblConvert1)
-                    .addComponent(txtConvert1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtConvert1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblConvert2)
                     .addComponent(txtConvert2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonConvertir)
                     .addComponent(jButtonLimpiar))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -213,6 +218,8 @@ public class ConversorGenerico extends javax.swing.JFrame {
         conversorSeleccionado = conversores.get(selectedIndex);
         lblConvert1.setText(conversorSeleccionado.getLabelValor1());
         lblConvert2.setText(conversorSeleccionado.getLabelValor2());
+        clearControls();
+        txtConvert1.requestFocus();
     }//GEN-LAST:event_jComboBoxConvertirActionPerformed
     /**
      * Este metodo es el que se ejecuta cuando un control del formulario pierde
@@ -257,30 +264,27 @@ public class ConversorGenerico extends javax.swing.JFrame {
      * volverlos a su estado original
      */
     private void jButtonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimpiarActionPerformed
-        txtConvert1.setText("");
-        Utilities.INSTANCE.paintControl(txtConvert1, Color.white);
-        txtConvert2.setText("");
-        Utilities.INSTANCE.paintControl(txtConvert2, Color.white);
+        clearControls();
     }//GEN-LAST:event_jButtonLimpiarActionPerformed
 
     /**
      * Opcion del menu que realiza la consulta sobre salir del sistema
      */
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void mnuItemSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItemSalirActionPerformed
         Integer answer = JOptionPane.showConfirmDialog(this, "¿Esta seguro que desea salir del sistema?", "Salir del sistema", JOptionPane.YES_NO_OPTION);
         if (answer.equals(0)) {
             System.exit(0);
         }
 
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_mnuItemSalirActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void mnuItemAcercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItemAcercaActionPerformed
         About frame = new About();
         frame.setLocationRelativeTo(this);
-        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE); 
+        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         frame.setResizable(false);
         frame.setVisible(true);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_mnuItemAcercaActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -330,16 +334,21 @@ public class ConversorGenerico extends javax.swing.JFrame {
      * @param convertFrom
      * @throws NumberFormatException
      */
-    private void realizarConversion(JComponent control, Boolean convertedInto) throws NumberFormatException {
+    private void realizarConversion(JComponent control, Boolean convertFrom) throws NumberFormatException {
         JTextField txtControl = (JTextField) control;
         String valorAConvertirString = txtControl.getText().replace(',', '.');
+        if (txtControl.getText().trim().equals("")) {
+            showErrorMessage(control, "Debe ingresar un valor en el campo");
+            return;
+        }
+
         if (!Utilities.INSTANCE.isNumeric(valorAConvertirString)) {
-            showErrorMessage(control);
+            showErrorMessage(control, "Debe ingresar un valor NUMERICO en el campo");
             return;
         }
         Double valorAConvertirDouble = Double.valueOf(valorAConvertirString);
-        Double valorConvertido = convertedInto ? conversorSeleccionado.convertirValor1AValor2(valorAConvertirDouble) : conversorSeleccionado.convertirValor2AValor1(valorAConvertirDouble);
-        if (convertedInto) {
+        Double valorConvertido = convertirAValor2 ? conversorSeleccionado.convertirValor1AValor2(valorAConvertirDouble) : conversorSeleccionado.convertirValor2AValor1(valorAConvertirDouble);
+        if (convertFrom) {
             txtConvert2.setText(String.format("%.2f", valorConvertido));
         } else {
             txtConvert1.setText(String.format("%.2f", valorConvertido));
@@ -356,10 +365,19 @@ public class ConversorGenerico extends javax.swing.JFrame {
      *
      * @param control
      */
-    private void showErrorMessage(JComponent control) {
+    private void showErrorMessage(JComponent control, String mensaje) {
         Utilities.INSTANCE.paintControl(control, Color.red);
-        JOptionPane.showMessageDialog(this, "Error al convertir", "Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Error al intentar convertir: " + mensaje, "Error", JOptionPane.ERROR_MESSAGE);
         control.requestFocus();
+    }
+    /**
+     * Esta funcion limpia los controles
+     */
+    private void clearControls() {
+        txtConvert1.setText("");
+        txtConvert2.setText("");
+        Utilities.INSTANCE.paintControl(txtConvert1, Color.white);
+        Utilities.INSTANCE.paintControl(txtConvert2, Color.white);
     }
 
 
@@ -367,13 +385,14 @@ public class ConversorGenerico extends javax.swing.JFrame {
     private javax.swing.JButton jButtonConvertir;
     private javax.swing.JButton jButtonLimpiar;
     private javax.swing.JComboBox<String> jComboBoxConvertir;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JLabel lblConvert1;
     private javax.swing.JLabel lblConvert2;
+    private javax.swing.JMenu mnuArchivo;
+    private javax.swing.JMenu mnuAyuda;
+    private javax.swing.JMenuItem mnuItemAcerca;
+    private javax.swing.JMenuItem mnuItemSalir;
     private javax.swing.JTextField txtConvert1;
     private javax.swing.JTextField txtConvert2;
     // End of variables declaration//GEN-END:variables
