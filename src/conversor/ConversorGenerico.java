@@ -39,7 +39,8 @@ public class ConversorGenerico extends javax.swing.JFrame {
         initComponents();
         setTitle("Conversor genérico");
         setLocationRelativeTo(null);
-
+        setResizable(false);
+        
         conversores.add(new CentimetrosPulgadasConversor());
         conversores.add(new GalonesLitrosConversor());
         conversores.add(new KilogramosLibrasConversor());
@@ -238,7 +239,7 @@ public class ConversorGenerico extends javax.swing.JFrame {
      */
     private void txtConvert1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConvert1KeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            realizarConversion(txtConvert1, convertirAValor2);
+            realizarConversion(txtConvert1, true);
         }
     }//GEN-LAST:event_txtConvert1KeyPressed
     /**
@@ -248,7 +249,7 @@ public class ConversorGenerico extends javax.swing.JFrame {
      */
     private void txtConvert2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConvert2KeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            realizarConversion(txtConvert2, convertirAValor2);
+            realizarConversion(txtConvert2, false);
         }
     }//GEN-LAST:event_txtConvert2KeyPressed
     /**
@@ -329,7 +330,7 @@ public class ConversorGenerico extends javax.swing.JFrame {
      * @param convertFrom
      * @throws NumberFormatException
      */
-    private void realizarConversion(JComponent control, Boolean convertFrom) throws NumberFormatException {
+    private void realizarConversion(JComponent control, Boolean convertedInto) throws NumberFormatException {
         JTextField txtControl = (JTextField) control;
         String valorAConvertirString = txtControl.getText().replace(',', '.');
         if (!Utilities.INSTANCE.isNumeric(valorAConvertirString)) {
@@ -337,8 +338,8 @@ public class ConversorGenerico extends javax.swing.JFrame {
             return;
         }
         Double valorAConvertirDouble = Double.valueOf(valorAConvertirString);
-        Double valorConvertido = convertirAValor2 ? conversorSeleccionado.convertirValor1AValor2(valorAConvertirDouble) : conversorSeleccionado.convertirValor2AValor1(valorAConvertirDouble);
-        if (convertFrom) {
+        Double valorConvertido = convertedInto ? conversorSeleccionado.convertirValor1AValor2(valorAConvertirDouble) : conversorSeleccionado.convertirValor2AValor1(valorAConvertirDouble);
+        if (convertedInto) {
             txtConvert2.setText(String.format("%.2f", valorConvertido));
         } else {
             txtConvert1.setText(String.format("%.2f", valorConvertido));
